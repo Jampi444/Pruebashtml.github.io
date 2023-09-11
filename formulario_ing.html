@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario Html Prueba de Datos sql</title>
+	<style type="text/css">
+	 *{
+	 	box-sizing: border-box;
+	 }
+
+	 input[type=text],select,textarea{
+	 	width: 90%;
+	 	padding: 12px;
+	 	border: 1px solid #060606;
+	 	border-radius: 4px;
+	 	resize: vertical;
+	 }
+	 label{
+	 	padding: 12px 12px 12px 0;
+	 	display: inline-block;
+	 }
+	 input[type=submit]{
+	 	background-color: black;
+	 	color: white;
+	 	padding: 12px 20px;
+	 	border: none;
+	 	border-radius: 4px;
+	 	cursor: pointer;
+	 	margin-top: 3em;
+	 	margin-bottom: 3em;
+	 }
+
+	 input[type=button]{
+	 	background-color: black;
+	 	color: white;
+	 	padding: 12px 20px;
+	 	border: none;
+	 	border-radius: 4px;
+	 	cursor: pointer;
+	 	margin-top: 3em;
+	 	margin-bottom: 3em;
+
+	 }
+
+	 input[type=submit]:hover{
+	 	background-color: #060606 ;
+	 }
+	 .container{
+	 	border-radius: 5px;
+	 	background-color: #B0E0E6;
+	 	padding: 18px;
+	 }
+	 .col-25{
+	 	float: left;
+	 	width: 25%;
+	 	margin-top: 6px;
+	 }
+	 .col-75{
+	 	float: left;
+	 	width: 75%;
+	 	margin-top: 6px;
+	 }
+	 .row::after{
+	 	content: "";
+	 	display: table;
+	 	clear: both;
+
+	 }
+	 @media screen and(max-width: 600 px){
+	 	.col-25,.col-75,input[text=submit]{
+	 		width: 100%;
+	 		margin-top: 0;
+	 	}
+	 }
+
+
+	</style>
+
+	<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+
+	<h1  style="background-color:powderblue;,;" >Formulario De Inscripciones:</h1>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<img id="drag1" src="999.JPG" draggable="true" ondragstart="drag(event)" width="1500" height="420">
+
+	<div class="container">
+
+		<form>
+			<!--Caja Primer y Segundo Apellido-->
+			
+			<div class="row">
+			  <div class="col-25">
+			  	<label for="PApell">Primer Apellido:</label>
+			  </div>
+
+			  <div class="col-25">
+			  	<input type="text" id="PApell"name="PrimerApellido">
+			  </div>
+
+			<div class="column">
+			  <div class="col-25">
+			  	<label for="SApell">Segundo Apellido:</label>
+			  </div>
+
+			  <div class="col-25">
+			  	<input type="text" id="SApell"name="SegundoApellido">
+			  </div>
+			
+		
+			<!--Caja Nombre y Segundo Nombre-->
+			    <div class="row">
+			    <div class="col-25">
+			   	<label for="Pnom">Primer Nombre:</label>			   	   	
+			    </div>
+			    <div class="col-25">
+			   	<input type="text" id="Pnom" name="PrNombre">			   	
+			    </div>
+	
+			    <div class="column">
+				<div class="col-25">
+			   	<label for="Snom">Segundo Nombre:</label>			   	   	
+			    </div>
+			    <div class="col-25">
+			   	<input type="text" id="Snom" name="SNombre">			   	
+			     </div>
+
+
+			    <div class="row">
+				<div class="col-25">
+			   	<label for="Genero">Genero:</label>			   	   	
+			    </div>
+			    <div class="col-25">
+			   	<select id="Gn"name="Genero">
+			   		    <option value="">seleccione alguna opción</option>
+						<option value="">Masculino</option>
+						<option value="">Femenino</option>	
+						</select>	   	
+			   </div>
+
+			   <div class="column">
+				<div class="col-25">
+			   	<label for="tp">Tipo Documento:</label>			   	   	
+			    </div>
+			   <div class="col-25">
+			   	<select id="Prog"name="Programas">
+			   		    <option value="">seleccione alguna opción</option>
+						<option value="t.i">Tarjeta Identidad </option>
+						<option value="C.C">Cedula Cuidadania</option>
+						<option value="Pasaport">Pasaporte</option>
+						<option value="Permis">Permiso de Permanencia </option>
+					</select>
+
+			   </div>
+			   <div class="row">
+				<div class="col-25">
+			   	<label for="tel">Telefono:</label>			   	   	
+			    </div>
+			   <div class="col-25">
+			   	<input type="text" id="tel" name="Telefono">			   	
+			   </div>
+			   <div class="column">
+				<div class="col-25">
+			   	<label for="Dir">Direccion:</label>			   	   	
+			    </div>
+			   <div class="col-25">
+			   	<input type="text" id="Dir" name="Direccion">			   	
+			   </div>
+				<div class="row">
+				<div class="col-25">
+			   	<label for="Email">Correo electronico:</label>			   	   	
+			    </div>
+			   <div class="col-25">
+			   	<input type="text" id="Email" name="Correo electronico">			   	
+			   </div>
+
+			<div class="column">
+				<div class="col-25">
+				<label for="Prog">Programas:</label>								
+				</div>
+				<div class="col-25">
+					<select id="Prog"name="Programas">
+						<option value="">seleccione alguna opción</option>
+						<option value="ingenieriaSot">Ingenieria De Robotica</option>
+						<option value="ingenieriaSis">Ingenieria De Sistemas</option>
+						<option value="ingenieriaSot">Ingenieria De Software</option>
+						<option value="ingenieriaSot">Ingenieria De Industrial</option>
+					</select>
+				</div>							
+			</div>
+
+            <div class="row">
+            	<div class="col-25">
+            	<label for="com">Comentarios:</label>	
+            	</div>
+            	<div class="col-25">
+            		<textarea id="com" name="Comentarios" style="height: 200px;">Escriba aquí su comentario...
+            		</textarea>
+               	</div>
+               	<div class="column">
+				<div class="col-25">
+				<label for="Prog">Universidades:</label>								
+				</div>
+				<div class="col-25">
+					<select id="Prog"name="Universidades">
+						<option value="">seleccione alguna opción</option>
+						<option value="ingenieriaSot">Universidad Nacional </option>
+						<option value="ingenieriaSis">Universitaria de Colombia</option>
+						<option value="ingenieriaSot">Universidad Thomas</option>
+						<option value="ingenieriaSot">Universidad De Sabana</option>
+					</select>
+				</div>							
+			</div>
+			<div class="column">
+				<div class="col-25">
+			   	<label for="Snom">Estrato:</label>			   	   	
+			    </div>
+			    <div class="col-25">
+			   	<input type="text" id="E" name="Estrato">			   	
+			     </div>
+			     <div class="column">
+				<div class="col-25">
+			   	<label for="">Nivel Educativo:</label>			   	   	
+			    </div>
+			    <div class="col-25">
+			   	<input type="text" id="nivel" name="Nivel Educativo">			   	
+			     </div>
+
+            </div>
+            <div class="column">
+				<div class="col-25">
+			   	<label for="F">Fecha Nacimiento:</label>			   	   	
+			    </div>
+			    <div>&nbsp; &nbsp; </div>
+           
+           <div class="col-25"> 
+           <input type="date" id="Fecha Nacimiento" name="date_control"/>
+     
+           </div>
+       </div>
+       <tr></tr>
+
+       		<div class="botones">
+
+	            <input type="submit" value="Enviar Registro" />
+	            <input type="button" value="Salir Formulario" />
+
+        	</div>
+
+		</form>
+		<iframe width="1500" height="500" src="https://www.youtube-nocookie.com/embed/QIGtt1Dutm4?si=4Rl7fYn26xlw07Z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<footer>
+			<center>  
+    <p> © 2023 Practica Html (5) Ing.Jean Paul Barrios .</p>
+     </center>
+  </footer>
+
+</body>
+</html>
